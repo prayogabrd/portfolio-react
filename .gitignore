@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Temporary and Ignored Folders
-src/sementara/
+src/_temp/
