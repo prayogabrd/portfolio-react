@@ -1,10 +1,11 @@
 import React from "react";
-import useTheme from "../utils/useTheme.ts";
+import { useThemeContext } from "../hooks/useThemeContext";
+
 import logo from "../assets/img/fokus-kripto_pxl.jpeg";
 import FontAwesomeIcon from "../assets/fontawesome@6.7.2";
 
 const Navbar: React.FC = () => {
-  const { isLight, setIsLight } = useTheme();
+  const { isLight, setIsLight } = useThemeContext();
 
   return (
     <nav className="backdrop-blur shadow-sm fixed top-0 right-0 left-0 z-10 overflow-x-clip">
@@ -26,7 +27,10 @@ const Navbar: React.FC = () => {
                 onChange={() => setIsLight(!isLight)}
               />
             </div>
-            <a className="inline-block px-3.5 py-1.5 font-bold rounded-md text-purple-50 bg-purple-600" href="mailto:prayogabrd@aol.com">
+            <a
+              className="inline-block px-3.5 py-1.5 font-bold rounded-md text-purple-50 bg-purple-600"
+              href="mailto:prayogabrd@aol.com"
+            >
               Contact
             </a>
           </div>

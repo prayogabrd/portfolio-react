@@ -6,7 +6,7 @@ import ai from "../assets/img/ai.jpeg";
 
 const Competence: React.FC = () => {
   return (
-    <section className="text-black dark:text-white overflow-x-clip transition-cinematic">
+    <section className="relative text-black dark:text-white overflow-x-clip transition-cinematic">
       <div className="mt-16 mb-10">
         <h1 className="text-center text-5xl roboto-semibold opacity-20 mb-10">
           Competence

@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import useRelativeMatrics from "../utils/useRelativeMatrics.ts";
+import Blob from "../layouts/element/Blob";
 // Import Assets
 // IT
 import tsLogo from "../assets/vector/typescript.svg";
@@ -53,7 +54,7 @@ const ITSkillsColumn: React.FC = () => {
             }}
           ></div>
         )}
-        <div className="absolute bg-purple-50 dark:bg-black blur-lg left-1/2 bottom-0 translate-x-[-30%] translate-y-[50%] w-1/2 lg:w-1/3 h-10"></div>
+        <div className="absolute bg-purple-50 dark:bg-black blur-lg left-1/2 bottom-0 translate-x-[-30%] translate-y-[50%] w-1/2 h-10"></div>
       </div>
       <div className="relative min-h-full rounded-sm bg-purple-50 dark:bg-[#111111] py-14">
         <span
@@ -191,7 +192,7 @@ const FinancePortfolioColumn: React.FC = () => {
             }}
           ></div>
         )}
-        <div className="absolute bg-purple-50 dark:bg-black blur-lg bottom-1/2 right-0 translate-y-[80%] translate-x-[50%] h-1/2 lg:h-1/3 w-10"></div>
+        <div className="absolute bg-purple-50 dark:bg-black blur-lg bottom-1/2 right-0 translate-y-[80%] translate-x-[50%] h-1/2 w-10"></div>
       </div>
       <div className="relative min-h-full rounded-sm bg-purple-50 dark:bg-[#111111] py-14">
         <span
@@ -249,7 +250,11 @@ const FinancePortfolioColumn: React.FC = () => {
 // --- Main Skills Component ---
 const Skills: React.FC = () => {
   return (
-    <section className="mt-16 text-black dark:text-fuchsia-50 overflow-x-clip transition-cinematic">
+    <section className="relative mt-16 text-black dark:text-fuchsia-50 overflow-x-clip transition-cinematic">
+      <Blob
+        wrap="w-[70%] lg:w-[50%] aspect-square bottom-0 left-1/2 translate-x-[-50%] translate-y-1/2"
+        innerBlobClasses="opacity-50 blur-2xl"
+      />
       <div className="mx-8 md:container md:mx-auto py-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-14 lg:gap-x-20">
           <ITSkillsColumn />

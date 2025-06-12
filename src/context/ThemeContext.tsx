@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+// src/context/ThemeContext.tsx
+import React, { useState, useEffect } from "react";
+import ThemeContext, { type ThemeContextType } from "./theme-context-instance";
 
-const useTheme: () => {
-  isLight: boolean;
-  setIsLight: React.Dispatch<React.SetStateAction<boolean>>;
-} = () => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
+  children
+}) => {
   const [isLight, setIsLight]: [
     boolean,
     React.Dispatch<React.SetStateAction<boolean>>
@@ -25,7 +26,9 @@ const useTheme: () => {
     localStorage.setItem("theme", theme);
   }, [isLight]);
 
-  return { isLight, setIsLight };
-};
+  const value: ThemeContextType = { isLight, setIsLight };
 
-export default useTheme;
+  return (
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  );
+};

@@ -4,7 +4,7 @@ import {
   useRef,
   RefObject,
   useCallback
-} from "react"; // Import useCallback
+} from "react";
 
 interface RelativeMetrics {
   top: number;
@@ -25,7 +25,6 @@ const useRelativeMatrics = (containerRef: RefObject<HTMLElement>) => {
     }
   };
 
-  // Bungkus calculateAllMetrics dengan useCallback
   const calculateAllMetrics = useCallback(() => {
     if (containerRef.current) {
       const containerRect = containerRef.current.getBoundingClientRect();
@@ -41,7 +40,7 @@ const useRelativeMatrics = (containerRef: RefObject<HTMLElement>) => {
       });
       setMetrics(newMetrics);
     }
-  }, [containerRef]); // calculateAllMetrics bergantung pada containerRef
+  }, [containerRef]);
 
   useLayoutEffect(() => {
     calculateAllMetrics();
@@ -53,7 +52,7 @@ const useRelativeMatrics = (containerRef: RefObject<HTMLElement>) => {
       window.removeEventListener("resize", calculateAllMetrics);
       window.removeEventListener("scroll", calculateAllMetrics);
     };
-  }, [containerRef, calculateAllMetrics]); // Tambahkan calculateAllMetrics ke dependency array
+  }, [containerRef, calculateAllMetrics]);
 
   return { setTargetRef, metrics };
 };

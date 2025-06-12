@@ -1,17 +1,22 @@
+// src/App.tsx
 import React from "react";
+import { ThemeProvider } from "./context/ThemeContext";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Competence from "./components/Competence";
-import Skills from "./components/Skill.tsx";
+import Skills from "./components/Skill";
+import Project from "./components/Project";
 
 const App: React.FC = () => {
   return (
-    <>
+    <ThemeProvider>
       <Navbar />
       <Hero />
       <Competence />
       <Skills />
-    </>
+      <Project />
+    </ThemeProvider>
   );
 };
 

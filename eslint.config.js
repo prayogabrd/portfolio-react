@@ -6,7 +6,7 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: ["dist", "src/sementara/"]
+    ignores: ["dist", "src/_temp/"]
   },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
