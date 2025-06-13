@@ -97,6 +97,7 @@ const Project: React.FC = () => {
                     <img
                       className="inline-block w-full"
                       src={`https://github-readme-stats.vercel.app/api/pin/?username=${github_username}&show_owner=true&repo=${repo.name}${!isLight ? "&theme=tokyonight" : ""}&t=${timestamp}`}
+                      alt={repo.name}
                     />
                   </a>
                 ))}

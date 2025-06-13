@@ -1,8 +1,8 @@
 import React from "react";
 import { useThemeContext } from "../hooks/useThemeContext";
+import FontAwesomeIcon from "../assets/fontawesome@6.7.2";
 
 import logo from "../assets/img/fokus-kripto_pxl.jpeg";
-import FontAwesomeIcon from "../assets/fontawesome@6.7.2";
 
 const Navbar: React.FC = () => {
   const { isLight, setIsLight } = useThemeContext();
