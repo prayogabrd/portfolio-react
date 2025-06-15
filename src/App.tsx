@@ -12,12 +12,12 @@ import Footer from "./components/Footer";
 const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <Navbar />
       <Hero />
       <Competence />
       <Skills />
       <Project />
       <Footer />
+      <Navbar />
     </ThemeProvider>
   );
 };

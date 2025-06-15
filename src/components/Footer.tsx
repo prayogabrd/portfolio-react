@@ -1,6 +1,5 @@
 // src/components/Footer.tsx
 import React from "react";
-// Pastikan path ke FontAwesomeIcon ini benar
 import FontAwesomeIcon from "../assets/fontawesome@6.7.2/";
 
 const Footer: React.FC = () => {

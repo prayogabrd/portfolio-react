@@ -1,6 +1,9 @@
+// src/components/Skill.tsx
 import React, { useRef } from "react";
 import useRelativeMatrics from "../utils/useRelativeMatrics";
 import Blob from "../layouts/element/Blob";
+import { useThemeContext } from "../hooks/useThemeContext";
+
 // Import Assets
 // IT
 import tsLogo from "../assets/vector/typescript.svg";
@@ -15,6 +18,7 @@ import twLogo from "../assets/vector/tailwindcss.svg";
 import btcLogo from "../assets/vector/bitcoin-btc-logo.svg";
 import bnbLogo from "../assets/vector/bnb-bnb-logo.svg";
 import xrpLogo from "../assets/vector/xrp-xrp-logo.svg";
+import xrpLogoDark from "../assets/vector/xrp-xrp-logo-dark.svg";
 
 // --- Sub-komponen untuk Kolom IT Skills ---
 const ITSkillsColumn: React.FC = () => {
@@ -24,16 +28,6 @@ const ITSkillsColumn: React.FC = () => {
   return (
     <div className="relative min-h-full p-[0.9px]" ref={containerRef}>
       <div className="absolute top-0 bottom-0 right-0 left-0 overflow-clip rounded-sm bg-gray-900 dark:bg-fuchsia-50">
-        {metrics["header"] && (
-          <div
-            className="absolute bg-purple-50 dark:bg-black blur-xl top-0 translate-x-[-25%] translate-y-[-50%]"
-            style={{
-              left: `${metrics["header"].left}px`,
-              height: `calc(${metrics["header"].height}px + 4rem)`,
-              width: `calc(${metrics["header"].width}px + 3rem)`
-            }}
-          ></div>
-        )}
         {metrics["langH3"] && (
           <div
             className="absolute bg-purple-50 dark:bg-black blur-lg left-0 translate-x-[-50%] translate-y-[-25%]"
@@ -54,24 +48,24 @@ const ITSkillsColumn: React.FC = () => {
             }}
           ></div>
         )}
-        <div className="absolute bg-purple-50 dark:bg-black blur-lg left-1/2 bottom-0 translate-x-[-30%] translate-y-[50%] w-1/2 h-10"></div>
+        <div className="absolute bg-purple-50 dark:bg-black blur-lg left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 w-1/2 h-10"></div>
       </div>
-      <div className="relative min-h-full rounded-sm bg-purple-50 dark:bg-[#111111] py-14">
+      <div className="relative min-h-full rounded-sm bg-purple-50 dark:bg-[#111111] py-8">
         <span
-          className="absolute left-3 translate-y-[-40%] font-serif font-light top-0"
-          ref={setTargetRef("header")}
+          className="absolute left-1 translate-y-[-10%] font-serif font-light bottom-full"
         >
-          Skills
+          Ability
         </span>
         <div className="relative">
           <h3
-            className="font-serif font-light text-3xl absolute left-0 translate-x-[-10%] top-0"
+            className="font-serif font-light text-3xl absolute left-0 top-0"
+            style={{ transform: "matrix(1, 0, 0, 1, -13.9209, 0)" }}
             ref={setTargetRef("langH3")}
           >
-            Language
+            Languages
           </h3>
           <div
-            className="pl-5 md:pl-8"
+            className="px-5 md:px-8"
             style={{
               paddingTop: metrics["langH3"]
                 ? `calc(${metrics["langH3"].height}px + 2rem)`
@@ -80,24 +74,24 @@ const ITSkillsColumn: React.FC = () => {
           >
             <div className="flex flex-wrap items-start justify-start gap-4 md:gap-8">
               <div className="flex flex-nowrap gap-x-1 items-center">
-                <img className="w-14" src={tsLogo} alt="TypeScript" />
+                <img className="w-14 object-contain" src={tsLogo} alt="TypeScript" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">Type Script</h4>
-                  <span>.ts</span>
+                  <h4 className="text-lg roboto-semibold">TypeScript</h4>
+                  <span className="text-sm">Strongly-typed JS</span>
                 </div>
               </div>
               <div className="flex flex-nowrap gap-x-1 items-center">
-                <img className="w-14" src={jsLogo} alt="JavaScript" />
+                <img className="w-14 object-contain" src={jsLogo} alt="JavaScript" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">Java Script</h4>
-                  <span>.js</span>
+                  <h4 className="text-lg roboto-semibold">JavaScript</h4>
+                  <span className="text-sm">Web Standard</span>
                 </div>
               </div>
               <div className="flex flex-nowrap gap-x-2 items-center">
-                <img className="w-14" src={phpLogo} alt="PHP" />
+                <img className="w-14 object-contain" src={phpLogo} alt="PHP" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">PHP</h4>
-                  <span>.php</span>
+                  <h4 className="text-lg roboto-semibold">PHP</h4>
+                  <span className="text-sm">Backend scripting</span>
                 </div>
               </div>
             </div>
@@ -109,10 +103,10 @@ const ITSkillsColumn: React.FC = () => {
             style={{ transform: "matrix(1, 0, 0, 1, -13.9209, 0)" }}
             ref={setTargetRef("fwH3")}
           >
-            Framework and Library
+            Frameworks & Libraries
           </h3>
           <div
-            className="pl-5 md:pl-8"
+            className="px-5 md:px-8"
             style={{
               paddingTop: metrics["fwH3"]
                 ? `calc(${metrics["fwH3"].height}px + 2rem)`
@@ -121,38 +115,38 @@ const ITSkillsColumn: React.FC = () => {
           >
             <div className="flex flex-wrap items-start justify-start gap-4 md:gap-8">
               <div className="flex flex-nowrap gap-x-2 items-center">
-                <img className="w-14" src={reactLogo} alt="React" />
+                <img className="w-14 object-contain" src={reactLogo} alt="React" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">React</h4>
-                  <span>react.dev</span>
+                  <h4 className="text-lg roboto-semibold">React</h4>
+                  <span className="text-sm">Frontend UI</span>
                 </div>
               </div>
               <div className="flex flex-nowrap gap-x-1 items-center">
-                <img className="w-14" src={laravelLogo} alt="Laravel" />
+                <img className="w-14 object-contain" src={laravelLogo} alt="Laravel" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">Laravel</h4>
-                  <span>laravel.com</span>
+                  <h4 className="text-lg roboto-semibold">Laravel</h4>
+                  <span className="text-sm">PHP Framework</span>
                 </div>
               </div>
               <div className="flex flex-nowrap gap-x-1 items-center">
-                <img className="w-14" src={vueLogo} alt="Vue.js" />
+                <img className="w-14 object-contain" src={vueLogo} alt="Vue.js" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">Vue.js</h4>
-                  <span>vuejs.org</span>
+                  <h4 className="text-lg roboto-semibold">Vue.js</h4>
+                  <span className="text-sm">Progressive JS FW</span>
                 </div>
               </div>
               <div className="flex flex-nowrap gap-x-1 items-center">
-                <img className="w-14" src={wpLogo} alt="Webpack" />
+                <img className="w-14 object-contain" src={wpLogo} alt="Webpack" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">Webpack</h4>
-                  <span>webpack.js.org</span>
+                  <h4 className="text-lg roboto-semibold">Webpack</h4>
+                  <span className="text-sm">Module Bundler</span>
                 </div>
               </div>
               <div className="flex flex-nowrap gap-x-1 items-center">
-                <img className="w-14" src={twLogo} alt="Tailwind" />
+                <img className="w-14 object-contain" src={twLogo} alt="Tailwind" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">TailwindCSS</h4>
-                  <span>tailwindcss.com</span>
+                  <h4 className="text-lg roboto-semibold">Tailwind CSS</h4>
+                  <span className="text-sm">Utility-first CSS</span>
                 </div>
               </div>
             </div>
@@ -167,24 +161,14 @@ const ITSkillsColumn: React.FC = () => {
 const FinancePortfolioColumn: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { setTargetRef, metrics } = useRelativeMatrics(containerRef);
+  const { isLight } = useThemeContext();
 
   return (
     <div className="relative min-h-full p-[0.9px]" ref={containerRef}>
       <div className="absolute top-0 bottom-0 right-0 left-0 overflow-clip rounded-sm bg-gray-900 dark:bg-fuchsia-50">
-        {metrics["header"] && (
-          <div
-            className="absolute bg-purple-50 dark:bg-black blur-xl top-0 translate-x-[-25%] translate-y-[-50%]"
-            style={{
-              left: `${metrics["header"].left}px`,
-              height: `calc(${metrics["header"].height}px + 4rem)`,
-              width: `calc(${metrics["header"].width}px + 3rem)`
-            }}
-          ></div>
-        )}
         {metrics["crypto"] && (
           <div
-            className="absolute bg-purple-50 dark:bg-black blur-lg
-            left-0 translate-x-[-50%] translate-y-[-20%]"
+            className="absolute bg-purple-50 dark:bg-black blur-lg left-0 translate-x-[-50%] translate-y-[-20%]"
             style={{
               top: `${metrics["crypto"].top}px`,
               height: `calc(${metrics["crypto"].height}px + 3rem)`,
@@ -192,12 +176,11 @@ const FinancePortfolioColumn: React.FC = () => {
             }}
           ></div>
         )}
-        <div className="absolute bg-purple-50 dark:bg-black blur-lg bottom-1/2 right-0 translate-y-[80%] translate-x-[50%] h-1/2 w-10"></div>
+        <div className="absolute bg-purple-50 dark:bg-black blur-lg bottom-0 left-1/2 translate-x-[-50%] translate-y-1/2 w-1/2 h-10"></div>
       </div>
-      <div className="relative min-h-full rounded-sm bg-purple-50 dark:bg-[#111111] py-14">
+      <div className="relative min-h-full rounded-sm bg-purple-50 dark:bg-[#111111] py-8">
         <span
-          className="absolute left-3 translate-y-[-40%] font-serif font-light top-0"
-          ref={setTargetRef("header")}
+          className="absolute left-1 translate-y-[-10%] font-serif font-light bottom-full"
         >
           Portfolio
         </span>
@@ -210,7 +193,7 @@ const FinancePortfolioColumn: React.FC = () => {
             Liquid Digital Assets
           </h3>
           <div
-            className="pl-5 md:pl-8"
+            className="px-5 md:px-8"
             style={{
               paddingTop: metrics["crypto"]
                 ? `calc(${metrics["crypto"].height}px + 2rem)`
@@ -219,24 +202,24 @@ const FinancePortfolioColumn: React.FC = () => {
           >
             <div className="flex flex-wrap items-start justify-start gap-4 md:gap-8">
               <div className="flex flex-nowrap gap-x-2 items-center">
-                <img className="w-10" src={btcLogo} alt="Bitcoin" />
+                <img className="w-10 object-contain" src={btcLogo} alt="Bitcoin" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">Bitcoin</h4>
-                  <span>BTC</span>
+                  <h4 className="text-lg roboto-semibold">Bitcoin</h4>
+                  <span className="text-sm">BTC</span>
                 </div>
               </div>
               <div className="flex flex-nowrap gap-x-2 items-center">
-                <img className="w-10" src={bnbLogo} alt="Binance" />
+                <img className="w-10 object-contain" src={bnbLogo} alt="Binance" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">Binance</h4>
-                  <span>BNB</span>
+                  <h4 className="text-lg roboto-semibold">Binance Coin</h4>
+                  <span className="text-sm">BNB</span>
                 </div>
               </div>
               <div className="flex flex-nowrap gap-x-2 items-center">
-                <img className="w-10" src={xrpLogo} alt="XRP" />
+                <img className="w-10 object-contain" src={isLight ? xrpLogo : xrpLogoDark} alt="XRP" />
                 <div>
-                  <h4 className="text-xl roboto-semibold">Ripple</h4>
-                  <span>XRP</span>
+                  <h4 className="text-lg roboto-semibold">XRP</h4>
+                  <span className="text-sm">Ripple</span>
                 </div>
               </div>
             </div>
@@ -252,7 +235,7 @@ const Skills: React.FC = () => {
   return (
     <section className="relative mt-16 text-black dark:text-fuchsia-50 overflow-x-clip transition-cinematic">
       <Blob
-        wrap="w-[70%] lg:w-[50%] aspect-square bottom-0 left-1/2 translate-x-[-50%] translate-y-1/2"
+        wrap="w-[70%] lg:w-1/2 aspect-square bottom-0 left-1/2 translate-x-[-50%] translate-y-1/2"
         innerBlobClasses="opacity-50 blur-2xl"
       />
       <div className="mx-8 md:container md:mx-auto py-5">
