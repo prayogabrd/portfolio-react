@@ -11,6 +11,7 @@ interface Repo {
   language: string | null;
   stargazers_count: number;
   forks_count: number;
+  fork: boolean;
 }
 
 const Project: React.FC = () => {
@@ -128,23 +129,20 @@ const Project: React.FC = () => {
                       {repo.language && (
                         <span className="mr-3 flex items-center">
                           <FontAwesomeIcon
-                            icon="fa-solid fa-code"
-                            className="mr-1 text-base"
+                            icon="fa-solid fa-code mr-1 text-base"
                           />{" "}
                           {repo.language}
                         </span>
                       )}
                       <span className="mr-3 flex items-center">
                         <FontAwesomeIcon
-                          icon="fa-solid fa-star"
-                          className="mr-1 text-base"
+                          icon="fa-solid fa-star mr-1 text-base"
                         />{" "}
                         {repo.stargazers_count}
                       </span>
                       <span className="flex items-center">
                         <FontAwesomeIcon
-                          icon="fa-solid fa-code-fork"
-                          className="mr-1 text-base"
+                          icon="fa-solid fa-code-fork mr-1 text-base"
                         />{" "}
                         {repo.forks_count}
                       </span>
@@ -164,8 +162,7 @@ const Project: React.FC = () => {
                 >
                   View All GitHub Repositories
                   <FontAwesomeIcon
-                    icon="fa-solid fa-arrow-right"
-                    className="ml-2 -mr-1"
+                    icon="fa-solid fa-arrow-right ml-2 mr-1"
                   />
                 </a>
               </div>

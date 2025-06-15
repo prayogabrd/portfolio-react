@@ -25,3 +25,6 @@ dist-ssr
 
 # Temporary and Ignored Folders
 src/_temp/
+src/_temp/*
+_temp/*
+_temp

@@ -38,8 +38,7 @@ const Footer: React.FC = () => {
                 className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 flex items-center gap-x-2"
               >
                 <FontAwesomeIcon
-                  icon="fa-brands fa-x-twitter"
-                  className="text-lg"
+                  icon="fa-brands fa-x-twitter text-lg"
                 />{" "}
                 Twitter
               </a>
@@ -50,8 +49,7 @@ const Footer: React.FC = () => {
                 className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 flex items-center gap-x-2"
               >
                 <FontAwesomeIcon
-                  icon="fa-brands fa-instagram"
-                  className="text-lg"
+                  icon="fa-brands fa-instagram text-lg"
                 />{" "}
                 Instagram
               </a>
@@ -62,8 +60,7 @@ const Footer: React.FC = () => {
                 className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 flex items-center gap-x-2"
               >
                 <FontAwesomeIcon
-                  icon="fa-brands fa-github"
-                  className="text-lg"
+                  icon="fa-brands fa-github text-lg"
                 />{" "}
                 GitHub
               </a>
@@ -74,8 +71,7 @@ const Footer: React.FC = () => {
                 className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 flex items-center gap-x-2"
               >
                 <FontAwesomeIcon
-                  icon="fa-brands fa-tiktok"
-                  className="text-lg"
+                  icon="fa-brands fa-tiktok text-lg"
                 />{" "}
                 TikTok
               </a>
@@ -88,8 +84,7 @@ const Footer: React.FC = () => {
               className="flex items-center gap-x-3 p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 shadow-md dark:shadow-lg"
             >
               <FontAwesomeIcon
-                icon="fa-brands fa-github-alt"
-                className="text-3xl text-gray-700 dark:text-gray-300"
+                icon="fa-brands fa-github-alt text-3xl text-gray-700 dark:text-gray-300"
               />
               <div className="flex flex-col">
                 <span className="text-xs text-gray-600 dark:text-gray-400">

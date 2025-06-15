@@ -1,10 +1,5 @@
-import {
-  useLayoutEffect,
-  useState,
-  useRef,
-  RefObject,
-  useCallback
-} from "react";
+import { useLayoutEffect, useState, useRef, useCallback } from "react";
+import type { RefObject } from "react";
 
 interface RelativeMetrics {
   top: number;
@@ -13,7 +8,7 @@ interface RelativeMetrics {
   width: number;
 }
 
-const useRelativeMatrics = (containerRef: RefObject<HTMLElement>) => {
+const useRelativeMatrics = (containerRef: RefObject<HTMLDivElement | null>) => {
   const targetRefs = useRef<Map<string, HTMLElement>>(new Map());
   const [metrics, setMetrics] = useState<Record<string, RelativeMetrics>>({});
 
